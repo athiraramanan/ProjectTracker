@@ -6,8 +6,8 @@ import App from './components/App';
 import reducers from './reducers';
 
 
-
-const composeEnhancers = window.__REDUX__DEVTOOLS_EXTENSION_COMPOSE__|| compose
+// compose , applyMiddleware , composeEnhancers are used for redux dev extention tool
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
 	reducers,
 	composeEnhancers(applyMiddleware())
