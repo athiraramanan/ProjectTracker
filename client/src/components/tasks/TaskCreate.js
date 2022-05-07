@@ -1,6 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
-
+import { connect } from 'react-redux';
+import { createTask } from '../../actions';
 class TaskCreate extends React.Component{
 	renderError({touched, error}) {
 		if (touched && error){
@@ -22,8 +23,8 @@ class TaskCreate extends React.Component{
 			</div>
 		)
 	}
-	onSubmit(formValues){
-		// console.log(formValues)
+	onSubmit = (formValues) => {
+		this.props.createTask(formValues)
 	}
 
 	render(){
@@ -67,9 +68,11 @@ const validate = (formValues) =>{
 	return errors;
 }
 
-export default  reduxForm({
+const formWrapped =reduxForm({
 	// name of form is just a string that represnet the functionality of this component
 	// it may be in any format like task, Task, TASK etc
 	form: 'TaskCreate',
 	validate
 })(TaskCreate);
+
+export default connect(null, {createTask}) (formWrapped);
