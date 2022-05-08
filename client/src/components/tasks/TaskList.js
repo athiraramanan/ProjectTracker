@@ -7,10 +7,22 @@ class TaskList extends React.Component {
 		this.props.fetchTasks()
 	}
 
+	renderAdmin(task){
+		if (task.userId==this.props.currentUserId) {
+			return (
+				<div className='right floated content'>
+					<button className='ui button primary'>EDIT</button>
+					<button className='ui button negative'>DELETE</button>
+				</div>
+			)
+		}
+	}
+
 	renderList(){
 		return this.props.tasks.map(task =>{
 			return(
 				<div className='item' key={task.id}>
+					{this.renderAdmin(task)}
 					<i className='large middle aligned tasks icon'/>
 						<div className='content'>{task.task}
 						{/*<div className='hours'>{task.hours}</div>*/}
@@ -37,6 +49,9 @@ class TaskList extends React.Component {
 const mapStateToProps =(state) => {
 	// Object.values is a function that pulled
 	// out all the data from the state function and inserted to an array
-	return {tasks: Object.values(state.tasks)}
+	return {
+		tasks: Object.values(state.tasks),
+		currentUserId: state.auth.userId
+	}
 }
 export default connect(mapStateToProps, {fetchTasks})(TaskList);

@@ -19,8 +19,9 @@ export const signOut = () => {
 	};
 };
 
-export const createTask = formValues => async dispatch => {
-	const response = await tasks.post('/tasks', formValues)	
+export const createTask = formValues => async (dispatch, getState) => {
+	const { userId } = getState().auth;
+	const response = await tasks.post('/tasks', { ...formValues, userId})	
 	dispatch({type: CREATE_TASK, payload: response.data});
 }
 
