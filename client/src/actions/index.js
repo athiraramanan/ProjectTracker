@@ -1,4 +1,6 @@
 import tasks from '../apis/tasks';
+import history from '../history';
+
 import {	SIGN_IN,
 					SIGN_OUT, 
 					CREATE_TASK,
@@ -23,6 +25,7 @@ export const createTask = formValues => async (dispatch, getState) => {
 	const { userId } = getState().auth;
 	const response = await tasks.post('/tasks', { ...formValues, userId})	
 	dispatch({type: CREATE_TASK, payload: response.data});
+	history.push('/')
 }
 
 export const fetchTasks = () => async dispatch => {
@@ -36,8 +39,9 @@ export const fetchTask = (id) => async dispatch => {
 }
 
 export const editTask = (id, formValues) => async dispatch =>{
-	const response = await tasks.put(`/tasks/${id}`, formValues)
-	dispatch({type: EDIT_TASK, payload: response.data});
+	const responce = await tasks.patch(`/tasks/${id}`, formValues)
+	dispatch ({type: EDIT_TASK, payload: responce.data})
+	history.push('/');
 }
 
 export const deleteTask = (id) => async dispatch => {

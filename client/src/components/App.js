@@ -1,27 +1,32 @@
 import React from 'react';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {Router, Route, Switch} from 'react-router-dom';
 import TaskCreate from './tasks/TaskCreate';
 import TaskEdit from './tasks/TaskEdit';
 import TaskDelete from './tasks/TaskDelete';
 import TaskShow from './tasks/TaskShow';
 import TaskList from './tasks/TaskList';
 import Header from './Header';
+import history from '../history';
 
-const App = () =>{
+
+const  App =() =>{
 	return(
 		<div className='ui container'>
-			<BrowserRouter>
+			<Router history={history}>
 				<div>
-				<Header/>
-					<Route path='/' exact component={TaskList}/>
-					<Route path='/tasks/new'  component={TaskCreate}/>
-					<Route path='/tasks/edit' exact component={TaskEdit}/>
-					<Route path='/tasks/delete'  component={TaskDelete}/>
-					<Route path='/tasks/show'  component={TaskShow}/>
+					<Header/>
+					<Switch>
+						<Route path='/' exact component={TaskList}/>
+						<Route path='/tasks/new' exact component={TaskCreate}/>
+						<Route path='/tasks/edit/:id' exact component={TaskEdit}/>
+						<Route path='/tasks/delete/:id' exact component={TaskDelete}/>
+						<Route path='/tasks/:id' exact component={TaskShow}/>	<Route path='/tasks/:id' exact component={TaskShow}/>
+					</Switch>
 				</div>
-			</BrowserRouter>
-	 	</div>
-	 )
+			</Router>
+		</div>
+	);
 }
-
 export default App;
+
+

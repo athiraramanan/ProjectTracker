@@ -1,30 +1,91 @@
 {
   "tasks": [
     {
-      "task": "PB+ DB update",
+      "task": "React Learning test",
+      "date": "10/5/2022",
       "hours": "8",
-      "date": "11/1/2022",
-      "project": "Other Activities",
-      "description": "Test",
+      "description": "Learning React Tutorials",
       "id": 1
     },
     {
       "task": "PB+ datatable migration",
-      "project": "Other Activities",
-      "hours": "8",
       "date": "12/2/2022",
+      "hours": "8",
       "description": "This is my new task",
-      "userId": "116361457388117962808",
       "id": 2
     },
     {
       "task": "PB+ kendo grid updation",
+      "date": "13/2/2022",
+      "hours": "6",
+      "description": "This is my new task",
+      "id": 3
+    },
+    {
+      "task": "React Learning",
+      "date": "10/5/2022",
+      "hours": "7",
+      "description": "Learning React Tutorials",
+      "id": 4
+    },
+    {
+      "task": "React Learning",
+      "date": "10/5/2022",
+      "hours": "6",
+      "description": "Learning React Tutorials",
+      "id": 5
+    },
+    {
+      "task": "React Learning",
+      "project": "Learning",
+      "hours": "7",
+      "date": "10/5/2022",
+      "description": "Learning React Tutorials",
+      "userId": "116361457388117962808",
+      "id": 6
+    },
+    {
+      "task": "Task2",
+      "hours": "8",
+      "date": "11/1/2022",
+      "description": "Test",
+      "userId": "116361457388117962808",
+      "id": 7
+    },
+    {
+      "task": "Test",
+      "hours": "8",
+      "date": "11/11/2021",
+      "description": "2222",
+      "userId": "116361457388117962808",
+      "id": 8
+    },
+    {
+      "task": "Local Holiday",
+      "project": "Local Holiday",
+      "hours": "8",
+      "date": "12/2/2022",
+      "description": "test",
+      "userId": "116361457388117962808",
+      "id": 9
+    },
+    {
+      "task": "Code Refactoring",
       "project": "Other Activities",
       "hours": "8",
-      "date": "13/2/2022",
-      "description": "This is my new task",
+      "date": "11/2/2022",
+      "description": "test",
       "userId": "116361457388117962808",
-      "id": 3
+      "id": 10
+    },
+    {
+      "task": "Test for refactoring",
+      "project": "Other Activities",
+      "hours": "8",
+      "date": "11/2/2022",
+      "description": "Test",
+      "userId": "116361457388117962808",
+      "id": 11
     }
   ]
 }
