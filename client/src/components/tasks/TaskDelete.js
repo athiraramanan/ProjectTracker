@@ -1,8 +1,10 @@
 import React from 'react';
+import Modal from '../Modal';
 const TaskDelete = () =>{
 	return(
 		<div>
-		TaskDelete
+			TaskDelete
+			<Modal/>
 		</div>
 	)
 }

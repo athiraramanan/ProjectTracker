@@ -49,8 +49,7 @@ class TaskList extends React.Component {
 		return(
 			<div>
 				{this.renderCreate()}	
-				<div className='ui celled list'>
-					<table className='item' id='customers'>
+					<table className='item' id='customers' style={{width: '100%'}}>
 					<thead>
 						<tr style={{color: "balck", 'backgroundColor': 'lightblue'}}>
 							<th>No.</th>
@@ -65,7 +64,6 @@ class TaskList extends React.Component {
 						{this.renderList()}	
 					</tbody>				
 					</table>
-				</div>
 			</div>
 		)
 	}
